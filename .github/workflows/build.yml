@@ -1,0 +1,41 @@
+on:
+  workflow_call:
+    inputs:
+      src:
+        required: false
+        type: string
+      dst:
+        required: false
+        type: string
+      branch:
+        required: true
+        type: string
+
+jobs:
+  test1:
+    name: test-${{inputs.branch}}/${{matrix.machine}}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        machine: [foo, bar, xyz]
+        distro: [poky, rpb]
+    steps:
+      - name: Show params
+        run: |
+          echo "BRANCH is ${{inputs.branch}}"
+          echo "MACHINE is ${{matrix.machine}}"
+          echo "DISTRO is ${{matrix.distro}}"
+      - name: Src
+        if: inputs.src
+        run: |
+          echo "SRC is ${{inputs.src}}"
+      - name: Dst
+        if: inputs.dst
+        run: |
+          echo "DST is ${{inputs.dst}}"
+      - name: SrcDst
+        if: inputs.dst && inputs.src
+        run: |
+          echo "SRC is ${{inputs.src}}"
+          echo "DST is ${{inputs.dst}}"

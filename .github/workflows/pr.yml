@@ -1,0 +1,24 @@
+name: PR test
+
+on:
+  pull_request:
+
+jobs:
+  build1:
+    uses: ndechesne/github-actions-tests/.github/workflow/build.yml@master
+    with:
+      src: my-source
+      branc: main
+  build2:
+    uses: ndechesne/github-actions-tests/.github/workflow/build.yml@master
+    with:
+      dst: my-destination
+      branc: test
+  build3:
+    uses: ndechesne/github-actions-tests/.github/workflow/build.yml@master
+    with:
+      src: my-source
+      dst: my-destination
+      branc: dev
+
+
