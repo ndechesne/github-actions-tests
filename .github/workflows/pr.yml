@@ -8,17 +8,17 @@ jobs:
     uses: ndechesne/github-actions-tests/.github/workflows/build.yml@master
     with:
       src: my-source
-      branc: main
+      branch: main
   build2:
     uses: ndechesne/github-actions-tests/.github/workflows/build.yml@master
     with:
       dst: my-destination
-      branc: test
+      branch: test
   build3:
     uses: ndechesne/github-actions-tests/.github/workflows/build.yml@master
     with:
       src: my-source
       dst: my-destination
-      branc: dev
+      branch: dev
 
 
