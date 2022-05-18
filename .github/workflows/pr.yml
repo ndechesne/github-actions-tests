@@ -5,17 +5,17 @@ on:
 
 jobs:
   build1:
-    uses: ndechesne/github-actions-tests/.github/workflow/build.yml@master
+    uses: ndechesne/github-actions-tests/.github/workflows/build.yml@master
     with:
       src: my-source
       branc: main
   build2:
-    uses: ndechesne/github-actions-tests/.github/workflow/build.yml@master
+    uses: ndechesne/github-actions-tests/.github/workflows/build.yml@master
     with:
       dst: my-destination
       branc: test
   build3:
-    uses: ndechesne/github-actions-tests/.github/workflow/build.yml@master
+    uses: ndechesne/github-actions-tests/.github/workflows/build.yml@master
     with:
       src: my-source
       dst: my-destination
