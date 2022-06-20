@@ -9,6 +9,7 @@ jobs:
     with:
       src: my-source
       branch: main
+      type: foo_bar
   build2:
     uses: ndechesne/github-actions-tests/.github/workflows/build.yml@master
     with:
