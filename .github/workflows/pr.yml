@@ -15,6 +15,7 @@ jobs:
     with:
       dst: my-destination
       branch: test
+      type: ${{job}}
   build3:
     uses: ndechesne/github-actions-tests/.github/workflows/build.yml@master
     with:
