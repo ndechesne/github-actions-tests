@@ -10,6 +10,9 @@ on:
       branch:
         required: true
         type: string
+      type:
+        type: string
+        default: TYPE_TEST
 
 jobs:
   test1:
@@ -26,6 +29,7 @@ jobs:
           echo "BRANCH is ${{inputs.branch}}"
           echo "MACHINE is ${{matrix.machine}}"
           echo "DISTRO is ${{matrix.distro}}"
+          echo "TYPE is ${{inputs.type}}"
       - name: Src
         if: inputs.src
         run: |
