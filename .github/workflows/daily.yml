@@ -1,0 +1,19 @@
+name: Daily build
+
+on:
+  schedule:
+    - cron: '5 * * * *'
+
+jobs:
+  master:
+    uses: ndechesne/github-actions-tests/.github/workflows/build.yml@master
+    with:
+      src: my-source
+      branch: master
+      type: foo_bar
+
+  test:
+    uses: ndechesne/github-actions-tests/.github/workflows/build.yml@master
+    with:
+      dst: my-destination
+      branch: test
